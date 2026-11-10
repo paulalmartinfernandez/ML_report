@@ -1,0 +1,21 @@
+{
+  "python": "3.13.2",
+  "sklearn": "1.9.1",
+  "numpy": "2.5.4",
+  "pandas": "3.1.1",
+  "FAST": false,
+  "SEED": 42,
+  "cv": "5x2",
+  "final_model": "xgb",
+  "class_scale": [
+    1.0,
+    16.0,
+    3.0
+  ],
+  "n_train_profiles": 183824,
+  "n_test_profiles": 45957,
+  "minutes_since_se      ERZFtup": 102.2,
+  "xgboost": "3.4.1",
+  "optuna": "5.0.0",
+  "imblearn": "0.14.2"
+}

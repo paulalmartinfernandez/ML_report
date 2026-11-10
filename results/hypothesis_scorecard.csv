@@ -1,0 +1,14 @@
+hypothesis,statement,verdict,evidence
+H1,Moderate performance (AUC 0.70–0.85),HOLDS,test AUC(diabetes vs rest) = 0.837 (criterion 0.70–0.85)
+H10,Cluster features add < 0.005 AUC to boosting,HOLDS,AUC(diabetes) gain of tuned HGB with cluster features = -0.0007 (criterion < 0.005); logistic: +0.0005
+H11,AUC falls with age (18-39 minus 60+ > 0.03),HOLDS,"AUC(18-39) = 0.833, AUC(60+) = 0.782, difference = +0.051 (criterion > 0.03)"
+H2,Non-linear models improve little (< 0.02 AUC),HOLDS,"max AUC gain over logit_L2_spline = hgb_tuned: +0.0029, rf_tuned: -0.0045 (criterion < 0.02)"
+H3,Prediabetes is the worst-predicted class,HOLDS,"F1 by class = [0.885, 0.034, 0.478] | AUC by class = [0.832, 0.711, 0.837]"
+H4,≤ 10 variables keep the performance (< 0.01 AUC),DOES NOT HOLD,AUC loss with top-10 = 0.0390 (criterion < 0.01); with top-15: 0.0021
+H5,Education + Income add little (< 0.005 AUC),HOLDS,AUC loss without Education/Income = 0.0024 (criterion < 0.005)
+H6,Uncalibrated trees are worse calibrated; calibrating helps,DOES NOT HOLD,"(a) raw worse than logit in Brier: False | (b) calibration lowers Brier: False [logit 0.2262; raw {'rf_tuned': 0.2223, 'hgb_tuned': 0.2215, 'tree_pruned': 0.2277}; calibrated {'rf_tuned': 0.2221, 'hgb_tuned': 0.2217, 'tree_pruned': 0.2267}]"
+H7a,Weak associations with BMI (|ρ| ≤ 0.23),DOES NOT HOLD,max |ρ| with BMI = 0.257 (criterion ≤ 0.23)
+H7b,BMI test R² < 0.30,HOLDS,test R² = 0.157 (HGB ceiling = 0.181; criterion < 0.30)
+H7c,Splines on Age beat the linear fit,HOLDS,splines on Age: ΔRMSE(CV) = +0.0482 (SE 0.0009)
+H8,Clusters differ in prevalence but not = target,DOES NOT HOLD,"max/min diabetes prevalence across clusters = 9.06 (criterion ≥ 2) | ARI vs target = 0.140 (criterion < 0.10, a threshold fixed here because H8 only said 'low')"
+H9,Ridge / PCR / PLS do not beat OLS (< 0.01 RMSE),HOLDS,best RMSE gain of ridge/PCR/PLS over OLS = +0.0000 BMI units (criterion < 0.01)
