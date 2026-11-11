@@ -2,8 +2,7 @@
 
 Machine Learning project for **PRDL** and **MLLB** (MUTSC, Universidad Politécnica de Madrid).
 A single, annotated Jupyter notebook covers the whole analysis: exploratory data analysis, regression of BMI,
-calibrated three-class classification of diabetes status and unsupervised health profiles. It closes with a
-scorecard of 11 hypotheses that were fixed before the models were run.
+calibrated three-class classification of diabetes status and unsupervised health profiles. 
 
 ## 1. Data
 **Diabetes Health Indicators Dataset** (derived from the CDC BRFSS 2015 survey): 253,680 rows, 21 predictors and the
@@ -81,7 +80,7 @@ without running anything.
 - The verdict on every hypothesis is in `results/hypothesis_scorecard.csv` and in Part 5 of the notebook.
 
 ## 8. Reproducibility
-- Seed 42 everywhere; library versions in `requirements.txt`.
+- Seed everywhere; library versions in `requirements.txt`.
 - All randomness goes through `SEED`; the cache makes repeated runs return identical numbers.
 - To start from scratch, delete `results/cache/`, `models/` and `figures/` (or set `FORCE_RECOMPUTE = True`).
 
