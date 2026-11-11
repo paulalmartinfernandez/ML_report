@@ -16,7 +16,7 @@ target `Diabetes_012` (0 = no diabetes, 1 = prediabetes, 2 = diabetes).
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-jupyter notebook Diabetes_ML_Unified_v2.ipynb
+jupyter notebook Diabetes_ML.ipynb
 ```
 
 
@@ -50,7 +50,7 @@ The first cell of Part 0 holds the configuration (`FAST`, `SEED`, `FORCE_RECOMPU
 ## 5. Repository layout
 | Path | Content |
 |---|---|
-| `Diabetes_ML_Unified_v2.ipynb` | the full analysis (Parts 0–5) |
+| `Diabetes_ML.ipynb` | the full analysis (Parts 0–5) |
 | `Data/` | input CSV; the notebook also writes `train.csv` and `test.csv` here |
 | `results/` | CSV tables: scorecard, CV and test metrics of every model, thresholds, subgroup performance, environment |
 | `results/cache/` | cached intermediate results (safe to delete) |
